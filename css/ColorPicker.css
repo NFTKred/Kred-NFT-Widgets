@@ -1,0 +1,23 @@
+.color-picker {
+	padding-right: 1em;
+}
+.color-picker-input {
+	width: 150px;
+	display: inline-block;
+	margin-bottom: 1em;
+}
+@media screen and (min-width: 450px) {
+	.color-picker {
+		position: relative;
+		display: inline-block;
+	}
+	.color-picker-input {
+		margin-bottom: 0;
+	}
+	.color-picker-wrapper {
+		position: absolute;
+		left: 0;
+		top: 2em;
+		z-index: 2;
+	}
+}

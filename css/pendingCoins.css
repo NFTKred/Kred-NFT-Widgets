@@ -1,0 +1,62 @@
+.pendingCoins-container {
+	padding: 10px 0;
+}
+.pendingCoins-container .pendingCoins-item {
+	padding: 15px 10px;
+	position: relative;
+}
+.pendingCoins-container > p {
+	margin: 5px 0;
+}
+.pendingCoins-container .pendingCoins-item .hide-pending {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	top: -12px;
+	right: -5px;
+	color: #e0e0e0;
+}
+@media (min-width: 768px) {
+	.pendingCoins-container .pendingCoins-items {
+		max-height: 700px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+	.pendingCoins-container .pendingCoins-item {
+		padding: 10px;
+	}
+	.pendingCoins-container .pendingCoins-item .hide-pending {
+		top: -6px;
+	}
+}
+.pendingCoins-container .pendingCoins-item .sell-request {
+	padding: 16px 10px;
+	display: block;
+	cursor: pointer;
+}
+.pendingCoins-container .pendingCoins-item a {
+	color: inherit;
+	text-decoration: none;
+}
+.pendingCoins-container .pendingCoins-item:nth-child(2n - 1) {
+	background: #f1f1f1;
+}
+.pendingCoins-container .pendingCoins-item > .col-auto > p {
+	margin: 18px 10px 0 0;
+}
+.pendingCoins-container .pendingCoins-item p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 5px 2px 0;
+}
+.pendingCoins-container .pendingCoins-item p:first-child {
+	margin-top: 8px;
+}
+.pendingCoins-container .pendingCoins-item i,
+.pendingCoins-container .pendingCoins-item p:nth-child(2) {
+	color: #cacaca;
+}
+.pendingCoins-container .pendingCoins-item button {
+	margin: 10px 0 0;
+}

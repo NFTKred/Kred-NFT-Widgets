@@ -1,0 +1,23 @@
+.buycoin-modal { }
+.buycoin-modal .buyprice-table {
+	margin: 25px -10px 15px;
+}
+.buycoin-modal .buyprice-table > .row {
+	border-top: 1px solid #dee2e6;
+}
+.buycoin-modal .buyprice-table > .row p {
+	margin: 10px 0;
+}
+.buycoin-modal .buyprice-table > .row .col-12 p {
+	margin-top: -10px;
+}
+.buycoin-modal .buyprice-table > .row:last-child {
+	border-bottom: 1px solid #dee2e6;
+}
+.buycoin-modal .walletToggle-container > span {
+	vertical-align: super;
+	font-weight: bold;
+}
+.buycoin-modal .walletToggle-container .switch {
+	margin: 4px 5px 0;
+}

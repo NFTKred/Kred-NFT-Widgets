@@ -1,0 +1,31 @@
+.popular-searches {
+	margin: 1em 5px;
+}
+.popular-searches .popular-search {
+	padding: 10px;
+	border: solid 1px #f1f1f1;
+	border-radius: 100px;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color: inherit;
+}
+.popular-searches .popular-search:hover {
+	border: solid 1px #cacaca;
+}
+@media (max-width: 767.98px) {
+	.popular-searches {
+		width: 100%;
+		overflow-x: auto;
+		height: 40px;
+		margin: 5px;
+		overflow-y: hidden;
+		display: inline-block;
+		white-space: nowrap;
+		text-align: center;
+	}
+	.popular-searches::-webkit-scrollbar {
+		height: 0; /* remove scrollbar space */
+		background: transparent; /* optional: just make scrollbar invisible */
+	}
+}

@@ -1,0 +1,23 @@
+.exportckr-modal { }
+.exportckr-modal .exportckr-table {
+	margin: 25px -10px 15px;
+}
+.exportckr-modal .exportckr-table > .row {
+	border-top: 1px solid #dee2e6;
+}
+.exportckr-modal .exportckr-table > .row p {
+	margin: 10px 0;
+}
+.exportckr-modal .exportckr-table > .row .form-control {
+	margin-top: 2px;
+}
+.exportckr-modal .exportckr-table > .row:last-child {
+	border-bottom: 1px solid #dee2e6;
+}
+.exportckr-modal .walletToggle-container > span {
+	vertical-align: super;
+	font-weight: bold;
+}
+.exportckr-modal .walletToggle-container .switch {
+	margin: 4px 5px 0;
+}

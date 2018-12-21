@@ -1,0 +1,17 @@
+.editcoinmeta-container {}
+.mycollection-container .editcoinmeta-container > .col-12 {
+	padding: 0;
+}
+.editcoinmeta-container .form-group {
+	margin: 10px 0;
+	padding: 0;
+}
+.editcoinmeta-container .form-control {
+	font-size: 14px;
+}
+.editcoinmeta-container p#coinprofile-cointype {
+	margin: 0 0 5px;
+}
+.editcoinmeta-container [id^="coinprofile-cointype-contents-"] .row {
+	padding: 0;
+}

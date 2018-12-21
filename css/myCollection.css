@@ -1,0 +1,322 @@
+.mycollection-container {
+    max-width: 1280px;
+    margin: 10px auto;
+}
+.collection-bio {
+    margin: 15px auto;
+}
+.collection-bio>a {
+    display: inline-block;
+    vertical-align: top;
+}
+.collection-bio .user-avatar {
+    background-size: cover;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.collection-bio .collection-bio-details {
+    margin-top: 5px;
+    display: inline-block;
+    width: calc(100% - 70px);
+}
+.collection-bio .collection-bio-details>p {
+    margin-bottom: 5px;
+}
+@media (min-width: 769px) {
+    .collection-bio .collection-bio-details {
+        width: calc(50% - 70px);
+    }
+}
+.collection-bio p a {
+    color: #cacaca;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mycollection-container .tab-content {
+    padding: 0;
+}
+.mycollection-container .mycollection-heading {
+    margin-bottom: 1em;
+}
+.mycollection-container .mycollection-heading .fa-cog {
+    vertical-align: super;
+    cursor: pointer;
+}
+.mycollection-container .mycollection-tabs-container .form-control:not(select) {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    height: 38px;
+    display: flex;
+    border-bottom: 2px solid transparent;
+}
+.mycollection-container .mycollection-tabs-container .form-control:not(select):focus {
+    border-bottom: 2px solid #007bff;
+}
+.mycollection-container .basic-single {
+    height: 37px;
+}
+.mycollection-container .basic-single>.select__control {
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    height: 37px;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    background: transparent;
+}
+.mycollection-container .basic-single>.select__control .select__indicators {
+    display: none;
+}
+.mycollection-container .basic-single>.select__control .select__value-container {
+    font-size: 14px;
+    height: 37px;
+}
+@media (min-width: 769px) {
+    .mycollection-container .basic-single>.select__control .select__value-container {
+        font-size: 16px;
+    }
+}
+.mycollection-container .select__control.select__control--is-focused {
+    border-bottom: 2px solid #007bff;
+}
+.mycollection-container .basic-single .select__menu,
+.mycollection-container .basic-single .select__menu .select__menu-list {
+    z-index: 99999;
+}
+.mycollection-container .form-row .nav-item.hidden {
+    display: none !important;
+}
+.mycollection-container .form-row {
+    z-index: 3;
+}
+@media (min-width: 769px) {
+    .mycollection-container .form-row {
+        /*position: absolute;*/
+        /*right: 8px;*/
+        /*top: 0;*/
+        /*width: 100%;*/
+        border-bottom: 1px solid #cacaca;
+    }
+}
+.mycollection-container .giveaway-container .col-12 {
+    padding: 0;
+}
+.mycollection-container {
+    position: relative;
+}
+.mycollection-container .tab-content {
+    margin: 0 5px;
+}
+@media (max-width: 767.98px) {
+    .mycollection-container {
+        /*padding: 0 10px*/
+    }
+    .mycollection-container .form-row {
+        /*padding-bottom: 10px;*/
+        border-bottom: 1px solid #cacaca;
+        margin-bottom: 10px;
+        height: 50px;
+    }
+    .mycollection-container .form-row .form-group {
+        margin: 0;
+    }
+}
+.mycollection-container .form-group .fa-search {
+    padding: 10px 5px;
+    cursor: pointer;
+}
+.mycollection-container .form-group .fa-sort-amount-down {
+    padding: 8px;
+    cursor: pointer;
+}
+.mycollection-container .nav-tabs {
+    background: none;
+    margin-bottom: 15px;
+    height: 37px;
+    border-color: #cacaca;
+}
+.mycollection-container .nav-tabs .nav-link,
+.mycollection-container .nav-tabs .nav-link:hover,
+.mycollection-container .nav-tabs .nav-link:focus {
+    color: #666;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    font-size: inherit;
+}
+.mycollection-container .nav-tabs .nav-link.active {
+    border: 0;
+    border-bottom: 2px solid #007bff;
+}
+.mycollection-container .nav>li.active a {
+    background: none;
+    border: 0;
+    color: #666;
+}
+.mycollection-container .nav-tabs .nav-item {
+    width: auto;
+    display: none;
+}
+@media (max-width: 767.98px) {
+    .mycollection-container .nav-tabs .nav-item .nav-link {
+        height: 49px;
+        padding: 15px;
+    }
+    .mycollection-container .nav-tabs .nav-item {
+        display: inline-block;
+    }
+    body .mycollection-container .nav-tabs {
+        width: 100%;
+        overflow-x: auto;
+        height: 50px;
+        margin-bottom: 0;
+        overflow-y: hidden;
+        display: inline-block;
+        white-space: nowrap;
+        text-align: center;
+    }
+    body .mycollection-container .nav-tabs::-webkit-scrollbar {
+        height: 0;
+        /* remove scrollbar space */
+        background: transparent;
+        /* optional: just make scrollbar invisible */
+    }
+    /*body:not(.iphone-platform) .mycollection-container .nav-tabs .nav-item .nav-link {*/
+    /*padding: 10px 0;*/
+    /*text-overflow: ellipsis;*/
+    /*overflow: hidden;*/
+    /*}*/
+    /*body:not(.iphone-platform) .mycollection-container .nav-tabs .nav-item {*/
+    /*width: 20%;*/
+    /*}*/
+    /*body:not(.iphone-platform) .mycollection-container .nav-tabs .nav-item:nth-child(2),*/
+    /*body:not(.iphone-platform) .mycollection-container .nav-tabs .nav-item:nth-child(3) {*/
+    /*width: 30%;*/
+    /*}*/
+    body .mycollection-container .nav-tabs.is-user-collection .nav-item {
+        width: auto;
+    }
+    .mycollection-container .mycollection-sort.form-control:not([size]):not([multiple]) {
+        height: 49px;
+    }
+}
+.mycollection-container .nav-tabs .nav-item.active {
+    background: transparent;
+}
+.mycollection-container .carousel-item .coin-item {
+    margin: 5px auto;
+}
+.mycollection-container .mycollection-avatar {
+    background: url(https://via.placeholder.com/120x120) center center no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+.mycollection-container .mycollection-title {
+    display: inline-block;
+}
+.mycollection-container .mycollection-title .badge {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 10px;
+    font-weight: normal;
+    padding: 6px 15px;
+    box-shadow: 0 0 2px 0 rgba(102, 102, 102, 0.5);
+    background: #fff;
+    vertical-align: bottom;
+}
+.mycollection-container .mycollection-sort.form-control:not([size]):not([multiple]) {
+    height: 34px;
+}
+.mycollection-container .share-url-container .fa-question-circle {
+    vertical-align: super;
+}
+.mycollection-container .share-url-container .input-group {
+    display: inline-flex;
+    width: 300px;
+    margin-left: 10px;
+}
+.mycollection-container .share-url-container .input-group .form-control.share-url {
+    height: 20px;
+    background: transparent;
+    border: 0;
+    font-size: 14px;
+    padding-left: 0;
+}
+.mycollection-container .mycollection-total-stats {
+    display: inline-block;
+    margin: 10px 0 0;
+}
+.mycollection-container .mycollection-total-stats p {
+    font-size: 14px;
+    margin: 0;
+}
+.mycollection-container .fa-search,
+.mycollection-container .fa-filter,
+.mycollection-container .fa-sort-amount-down {
+    font-size: 18px;
+    padding: 8px 10px;
+    color: #cacaca;
+    cursor: pointer;
+}
+.mycollection-container .fa-search,
+.mycollection-container .form-group {
+    height: 38px;
+}
+.mycollection-container .form-group {
+    margin-bottom: 0;
+}
+.mycollection-container .fa-search.selected,
+.mycollection-container .fa-filter.selected,
+.mycollection-container .fa-sort-amount-down.selected {
+    color: #666666;
+}
+.mycollection-container .mycollection-given-container {
+    margin-top: 15px;
+}
+.mycollection-container #accordion {
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 10px;
+}
+.mycollection-container #accordion h4 {
+    cursor: pointer;
+}
+@media (max-width: 767.98px) {
+    .mycollection-container .mycollection-total-stats {
+        text-align: right;
+        top: 90px;
+        left: auto;
+        right: 15px;
+    }
+    /*.mycollection-container .mycollection-total-stats p {*/
+    /*width: 75px;*/
+    /*font-size: 10px;*/
+    /*margin-bottom: 2px;*/
+    /*}*/
+    .mycollection-container .coinprofile-comments {
+        max-height: 500px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .mycollection-container .basic-single {
+        height: 50px;
+    }
+    .mycollection-container .basic-single>.select__control {
+        height: 50px;
+    }
+    .mycollection-container .fa-search,
+    .mycollection-container .fa-filter,
+    .mycollection-container .fa-sort-amount-down {
+        padding: 14px 10px 14px 20px;
+    }
+    .mycollection-container .carousel-item .coin-item {
+        margin: auto;
+    }
+}

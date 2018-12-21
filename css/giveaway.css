@@ -1,0 +1,67 @@
+
+.giveaway-modal .smsrequest-settings .input-group {
+	margin-top: 5px;
+}
+.giveaway-modal .smsrequest-settings .input-group-append {
+	cursor: pointer;
+}
+.giveaway-modal .smsrequest-settings input.form-control {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin-top: -7px;
+	font-size: 14px;
+	height: 34px;
+}
+.giveaway-modal .smsrequest-settings .form-group {
+	margin-top: 10px;
+}
+.giveaway-modal .smsrequest-settings .form-group input.form-control {
+	margin: 0;
+	font-size: 24px;
+	background: #e9ecef;
+}
+.giveaway-modal .smsrequest-settings .form-group .col-form-label {
+	font-size: 18px;
+	margin-top: 3px;
+	padding: 0;
+}
+.giveaway-modal .smsrequest-settings .form-group {
+	height: auto;
+	margin-bottom: 10px;
+}
+.giveaway-modal .smsrequest-settings .btn {
+	margin-bottom: 10px;
+}
+.giveaway-modal .bootstrap-datetimepicker-widget {
+	z-index: 999999999999;
+}
+.giveaway-modal .bootstrap-datetimepicker-widget .btn-primary {
+	border-radius: 5px;
+	font-size: 12px;
+	min-width: auto;
+}
+
+.giveaway-modal .bootstrap-datetimepicker-widget table td.day {
+	height: 20px;
+	line-height: 20px;
+	width: 20px;
+}
+.giveaway-modal .smsrequest-settings .form-group.expiry-input .form-control {
+	font-size: 14px;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.giveaway-modal .smsrequest-settings .form-group.expiry-input .col-2 {
+	padding: 0;
+	margin-top: 7px;
+}
+.giveaway-mobile-options .qr-code-container img {
+	width: 100%;
+}
+.giveaway-modal .giveaway-mobile-options a.share-btn {
+	margin: 45px 10px 0;
+	font-size: 20px;
+	color: #cacaca;
+	display: block;
+}

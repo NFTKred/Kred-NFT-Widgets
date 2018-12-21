@@ -1,0 +1,50 @@
+.contacts-container {
+	padding: 10px 0;
+}
+.contacts-container .contacts-items {
+	margin-top: 10px;
+	margin-bottom: 1em;
+}
+.contacts-container .contacts-items:empty {
+	margin: 0;
+}
+.contacts-container .contact-item {
+	padding: 10px;
+}
+.contacts-container .contact-item .contact-avatar {
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	border-radius: 100%;
+}
+.contacts-container .contact-item:nth-child(2n - 1) {
+	background: #f1f1f1;
+}
+.contacts-container .contact-item p {
+	max-width: 140px;
+	padding: 18px 5px 0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.contacts-container .contact-item button {
+	margin-top: 10px;
+}
+.contacts-container .contacts-search-container {
+	border-bottom: 1px solid #cacaca;
+	display: flex;
+}
+.contacts-container .contacts-search-container .fa-search {
+	display: inline-block;
+	padding: 10px 5px;
+}
+.contacts-container .contacts-search-container input {
+	display: inline-block;
+}
+@media (min-width: 768px) {
+	.contacts-container .contacts-items {
+		max-height: 700px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+}

@@ -1,0 +1,60 @@
+/* fix conflict with Bootstrap */
+#sb_widget {
+	z-index: 3;
+}
+#sb_widget .btn {
+	min-width: 0;
+}
+.coinprofile-container #sb_widget .chat-section .message-set.user .nickname {
+	display: inline-block;
+}
+#sb_widget .chat-section .message-set .message {
+	border: 0;
+}
+#sb_widget .chat-section .top .btn.ic-invite {
+	display: none;
+}
+#sb_widget .file {
+	box-shadow: none !important;
+}
+@media (max-width: 768px) {
+	#sb_widget .channel-board {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 50px;
+	}
+	#sb_widget .chat-section .top .btn.ic-leave {
+		margin-right: 10px;
+	}
+	#sb_widget .chat-section .top .btn.ic-members {
+		margin: 0 16px;
+	}
+	#sb_widget .chat-section .content .content-bottom {
+		position: fixed;
+		bottom: 0;
+	}
+	#sb_widget .popup {
+		bottom: auto;
+		top: 85px;
+		position: fixed;
+		right: auto !important;
+	}
+	#sb_widget .popup .popup-body::before {
+		left: 75%
+	}
+	#sb_widget .chat-section .chat-board {
+		top: 50px;
+		margin: 0;
+	}
+	#sb_widget .channel-board .content.channel-list ul .content-bottom .last-message {
+		width: 90%;
+	}
+}
+#sb_widget .chat-section .content {
+	position: relative;
+}
+#sb_widget .chat-section .content .input {
+	position: absolute;
+	bottom: 52px;
+}

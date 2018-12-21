@@ -1,0 +1,35 @@
+.claimCoinSplashmodal-modal{}
+.claimCoinSplashmodal-modal .modal-content {
+	background: rgba(0,0,0,.5);
+	color: white;
+	box-shadow: none;
+}
+@media (min-width: 768px) {
+	.claimCoinSplashmodal-modal .modal-content {
+		background: transparent;
+	}
+}
+.claimCoinSplashmodal-modal.modal .modal-content .modal-body p {
+	font-size: 14px;
+}
+.claimCoinSplashmodal-modal h3 {
+	font-size: 24px;
+	margin: 20px 0;
+}
+.claimCoinSplashmodal-modal h4 {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.claimCoinSplashmodal-modal ul li {
+	margin-bottom: 10px;
+}
+.claimCoinSplashmodal-modal button {
+	min-width: 60%;
+	margin: 10px;
+}
+@media (max-width: 768px) {
+	.claimCoinSplashmodal-modal .modal-content button {
+		display: block;
+		margin: 2em auto;
+	}
+}

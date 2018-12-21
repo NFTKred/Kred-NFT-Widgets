@@ -1,0 +1,8 @@
+.shareModal-modal {}
+.shareModal-modal .modal-body a {
+	margin: 15px;
+	display: inline-block;
+}
+.shareModal-modal .fa-twitter { color: #00aced; }
+.shareModal-modal .fa-facebook-f { color: #3b5998; }
+.shareModal-modal .fa-linkedin-in { color: #007bb6; }

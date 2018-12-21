@@ -1,0 +1,26 @@
+.circulationmodal-modal { }
+.circulationmodal-modal .circulation-item {
+	margin-bottom: 5px;
+}
+.circulationmodal-modal .circulation-item a {
+	 color: #666666;
+ }
+.circulationmodal-modal .circulation-item img.circulation-item-avatar {
+	border-radius: 100%;
+	height: 35px;
+	width: 35px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+.circulationmodal-modal .circulation-item .circulation-item-author {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 0;
+	padding-bottom: 2px;
+	vertical-align: middle;
+}
+.circulationmodal-modal .circulation-item button {
+	margin-top: 4px;
+}

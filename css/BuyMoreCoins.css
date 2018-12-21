@@ -1,0 +1,107 @@
+.buymorecoins-container {
+	max-width: 1280px;
+	margin: auto;
+	padding: 0 10px;
+}
+.buymorecoins-container .alert {
+	max-width: 100%;
+	color: #ffffff;
+	border-radius: 0;
+}
+.buymorecoins-container .alert.alert-primary {
+	background: #377ef7;
+}
+.buymorecoins-container .row {
+	padding: 10px 0;
+}
+.buymorecoins-container .buymorecoins-tabs-container {
+	position: relative;
+}
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs {
+	background: none;
+	margin-bottom: 2em;
+	border-color: #cacaca;
+}
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs .nav-link,
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs .nav-link:hover,
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs .nav-link:focus {
+	color: #666;
+	background: none;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	font-size: inherit;
+}
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs .nav-link.active {
+	border: 0;
+	border-bottom: 2px solid #007bff;
+}
+.buymorecoins-container .buymorecoins-tabs-container .nav > li.active a {
+	background: none;
+	border: 0;
+	color: #666;
+}
+.buymorecoins-container .buymorecoins-tabs-container .nav-tabs .nav-item {
+	width: auto;
+	background: transparent;
+}
+.buymorecoins-container .truncate {
+	max-width: 75%;
+	margin-right: 2px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.buymorecoins-container .tab-pane i {
+	color: #dee2e6;
+}
+.buymorecoins-container .buy-method-header h4 {
+	margin: 10px 0 20px;
+}
+.buymorecoins-container .conversion-container {
+	margin-bottom: 15px;
+}
+.buymorecoins-container .conversion-container .conversion-left,
+.buymorecoins-container .conversion-container .conversion-right {
+	width: calc(50% - 5px);
+	display: inline-block;
+}
+.buymorecoins-container .conversion-container .equalsign {
+	color: #377ef7;
+	font-size: 15px;
+	width: 10px;
+	display: inline-block;
+}
+.buymorecoins-container .regular-price,
+.buymorecoins-container .total-price {
+	border-top: 1px solid #dee2e6;
+	padding: 15px 0;
+}
+.buymorecoins-container .total-price {
+	border-bottom: 1px solid #dee2e6;
+	margin-bottom: 10px;
+}
+.buymorecoins-container .paymentoptions-tabs-container {
+	background-color: #f8f8f9;
+	padding: 5px 10px 20px;
+	margin: 15px -10px;
+}
+.buymorecoins-container .import-wallet-container {
+	padding: 5px 10px 20px;
+	margin: 15px -10px;
+}
+.buymorecoins-container .paymentoptions-tabs-container .transfer-wallet-id,
+.buymorecoins-container .import-wallet-container .transfer-wallet-id {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin-top: -7px;
+	font-size: 14px;
+}
+.buymorecoins-container .paymentoptions-tabs-container .input-group-append {
+	cursor: pointer;
+}
+.buymorecoins-container .qrcode-container > canvas {
+	max-width: 100%;
+	height: auto !important;
+}

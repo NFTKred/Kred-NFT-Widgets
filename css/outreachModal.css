@@ -1,0 +1,33 @@
+.outreachmodal-modal { }
+.outreachmodal-modal .modal-body {
+	padding: 0;
+}
+.outreachmodal-modal .connect-container,
+.outreachmodal-modal .storyteller-container,
+.outreachmodal-modal .whitepaper-container {
+	padding: 0 1em 1em;
+}
+.outreachmodal-modal .connect-container,
+.outreachmodal-modal .storyteller-container {
+	border-bottom: 1px solid #e9ecef;
+}
+.outreachmodal-modal .connect-container i.fab {
+	color: #cacaca;
+}
+.outreachmodal-modal .connect-container .col-8 .row:not(:last-child) {
+	border-bottom: 1px solid #e9ecef;
+}
+.outreachmodal-modal .modal-content .modal-body p {
+	font-size: 14px;
+	margin: 15px 0;
+}
+.outreachmodal-modal .modal-content .modal-body a {
+	color: #007bff;
+}
+.outreachmodal-modal .form-control {
+	margin-bottom: 5px;
+}
+.outreachmodal-modal .storyteller-container p.text-success,
+.outreachmodal-modal .whitepaper-container p.text-success {
+	margin: 7px 0;
+}

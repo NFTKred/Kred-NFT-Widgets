@@ -1,0 +1,46 @@
+.leaders-container {
+	padding: 10px 0;
+}
+.leaders-container .nav-tabs .nav-link {
+	padding: 7px 5px;
+}
+.leaders-container .leader-item {
+	padding: 10px;
+}
+.leaders-container .leader-item a {
+	color: inherit;
+	text-decoration: none;
+}
+.leaders-container .leader-item:nth-child(2n - 1) {
+	background: #f1f1f1;
+}
+.leaders-container .leader-item > .col-auto > p {
+	margin: 18px 10px 0 0;
+}
+.leaders-container .leader-item > .col-2 > p {
+	margin: 18px 0 0 10px;
+}
+.leaders-container .leader-item p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 5px 5px 0;
+}
+.leaders-container .leader-item p:first-child {
+	margin-top: 8px;
+}
+.leaders-container .leader-item i,
+.leaders-container .leader-item p:nth-child(2) {
+	color: #cacaca;
+}
+.leaders-container .leader-item p span {
+	font-family: Font Awesome\ 5 Free, FontAwesome, Arial, Helvetica, sans-serif;
+	font-weight: 700;
+}
+@media (min-width: 768px) {
+	.leaders-container .tab-content {
+		max-height: 700px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+}

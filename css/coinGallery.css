@@ -1,0 +1,11 @@
+.coingallery-container {
+}
+.coingallery-container .carousel-control-prev,
+.coingallery-container .carousel-control-prev:hover,
+.coingallery-container .carousel-control-prev:focus,
+.coingallery-container .carousel-control-next,
+.coingallery-container .carousel-control-next:hover,
+.coingallery-container .carousel-control-next:focus {
+	color: #cacaca;
+	font-size: 25px;
+}

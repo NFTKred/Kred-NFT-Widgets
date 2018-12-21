@@ -1,0 +1,29 @@
+[
+	{
+		"address": "GDOQIJEDWO32UU5OK4Y4K5M56XDJHS3EFTS2EK6IV62JX4Y356RBYQHX",
+		"balances": [
+			{
+				"amount": 112.0,
+				"coins": 11,
+				"created": "2018-03-28T17:05:38.000000",
+				"currency": 1,
+				"minted": 27.0,
+				"minted_amount": 27.0,
+				"minted_coins": 27,
+				"unminted": 85.0,
+				"unminted_amount": 85.0,
+				"unminted_balances": 1,
+				"updated": "2018-05-04T23:31:45.000000",
+				"wallet": 386
+			}
+		],
+		"created": "2018-03-28T17:05:38.000000",
+		"name": "Default",
+		"platform": "stellar",
+		"status": "active",
+		"updated": null,
+		"user": "5345622cb7725d7b2aea244f",
+		"uuid": "emfqbbvcqveg7l5iuvz7b3zf34",
+		"wallet": 386
+	}
+]
