@@ -18,8 +18,9 @@ Add the following to your code:
 ```
 ## Options
 Use the following options to customize your widget:
+
 | Option     | Default Value | Description |
-| ---------- | ------------- | ----------- |
+| ---------- | :------------- | :----------- |
 | target     | `app_coinkred`| ID to render widget |
 | widget     | `explore`     | Widget to render. Valid values are `explore`, `marketplace`, `collection`, `newsfeed` or `leaderboard` |
 | domain     | `null`        | Render Coins from a certain collection domain. Eg. 'jdr.ceo' |
