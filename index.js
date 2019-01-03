@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import _ from 'underscore';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import './scss/fontawesome.scss';
 
 import { checkLoggedInUser } from './js/auth';
 import { MarketplacePage } from './containers/Marketplace';
