@@ -109,7 +109,7 @@
     position: relative;
 }
 .mycollection-container .tab-content {
-    margin: 0 5px;
+    margin: 10px 5px;
 }
 @media (max-width: 767.98px) {
     .mycollection-container {

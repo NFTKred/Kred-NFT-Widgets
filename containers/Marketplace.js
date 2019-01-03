@@ -134,7 +134,6 @@ export class MarketplacePage extends Component {
 	changeSort(event) {
 		event.preventDefault();
 		var value = $(event.target).val();
-
 		this.setState({
 			sort: value
 		});
@@ -195,7 +194,7 @@ export class MarketplacePage extends Component {
 						marketplaceOwner={marketplaceOwner}
 						search={search}
 						tagTerm={tag}
-						onSearch={debounce(term => this.onSearch(term), 500)}
+						onSearch={(term) => this.onSearch(term)}
 						changeSort={(e) => this.changeSort(e)}
 						changeFilter={this.changeFilter}
 						onSelectTag={this.onSelectTag}

@@ -104,15 +104,19 @@ class MarketplaceTabs extends Component {
 
 		_this.setState({search: ''});
 	}
-	searchOption(selectedOptions) {
+	searchOption(event) {
 		var _this = this,
-			searchTerm = selectedOptions && selectedOptions.value || '';
+			searchTerm = event.target.value || '';
 
 		_this.props.onSearch(searchTerm);
 	}
+	changeSort(event) {
+		var _this = this;
+		_this.props.changeSort(event);
+	}
 	render() {
 		const {isOwner, isUserMarketplace, marketplaceOwner, loggedInUser, categoryTerm, batchNumber, tagTerm, search,
-			onSearch, changeSort, changeFilter, onSelectTag, showSearchBar, showSortToggle
+			onSearch, changeSort, changeFilter, onSelectTag, showSearchBar, showSortToggle, globalSort
 			} = this.props;
 		const {showSort, showSearch, showFilter, tab, isMobile, tags} = this.state;
 
@@ -124,17 +128,17 @@ class MarketplaceTabs extends Component {
 					{!!showSearchBar && ((tab === 'all-tab' || tab === 'sales-tab' || isMobile) && ((!tagTerm && !categoryTerm) || batchNumber || !search)) && (
 						<i className={"fas fa-search" + (showSearch ? ' selected' : '')}></i>
 					)}
-					<div className={"form-group"
+					{!!showSearchBar && (<div className={"form-group"
 						+ (!!showSearch ? ' col' : (isMobile ? '' : ' col-2 text-right'))}>
 								{showSearch && !batchNumber && (
-									<input type="search" placeholder="Search" className="form-control" onChange={(e) => this.search(e)}/>
+									<input type="search" placeholder="Search" className="form-control" onChange={(e) => this.searchOption(e)}/>
 								)}
-						</div>
+						</div>)}
 
-						{(tab && tab.match(/(all-tab)/) && (search || tagTerm || batchNumber) && !!showSort) && (
+						{(tab && tab.match(/(all-tab)/) && (search || tagTerm || batchNumber || globalSort) && !!showSort) && (
 							<div className={"form-group col" + !showSearch ? '' : ' text-center'}>
 								<div>
-									<select className="marketplace-sort form-control form-control-sm" onChange={changeSort}>
+									<select className="marketplace-sort form-control form-control-sm" onChange={(e) => this.changeSort(e)}>
 										<option value={batchNumber ? "-coin" : "-created"}>Most Recent</option>
 										<option value={batchNumber ? "+coin" : "+created"}>Least Recent</option>
 										<option value="-value">Highest Value</option>
@@ -151,7 +155,7 @@ class MarketplaceTabs extends Component {
 						{tab === 'sales-tab' && !categoryTerm && !!showSort && (
 							<div className={"form-group col" + !!showSort ? '' : ' text-center'}>
 								<div>
-									<select className="marketplace-sort form-control form-control-sm" onChange={changeSort}>
+									<select className="marketplace-sort form-control form-control-sm" onChange={(e) => this.changeSort(e)}>
 										<option value="-created">Most Recent</option>
 										<option value="+created">Least Recent</option>
 									</select>
@@ -160,7 +164,7 @@ class MarketplaceTabs extends Component {
 						)}
 
 					{!!showSortToggle ? (<div className="col-auto">
-							{((tab === 'sales-tab' && !categoryTerm) || (tab === 'all-tab' && !!(search || tagTerm || batchNumber))) && (
+							{((tab === 'sales-tab' && !categoryTerm) || (tab === 'all-tab' && !!(search || tagTerm || batchNumber || globalSort)))&& (
 								<i className={"fas fa-sort-amount-down" + (showSort ? ' selected' : '')} onClick={() => this.showSort()}></i>
 							)}
 					</div>) : null}

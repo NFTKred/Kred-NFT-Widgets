@@ -147,6 +147,13 @@ const MarketplaceSort = React.createClass({
 			_this.renderCoins();
 		}, 2000);
 	},
+	changeSort(event) {
+		var _this = this;
+		_this.setState({
+			allSort: $(event.target).val()
+		});
+		_this.renderCoins();
+	},
 	viewBatch(url) {
 		this.setState({
 			allCoinsLoaded: false,
@@ -199,7 +206,7 @@ const MarketplaceSort = React.createClass({
 		return (
 			<div className="marketplace-container">
 				<div>
-					<MarketplaceTabs {...this.props} search={search}
+					<MarketplaceTabs {...this.props} search={search} globalSort={true}
 						onSearch={term => this.search(term)} changeSort={(e) => this.changeSort(e)}/>
 				</div>
 

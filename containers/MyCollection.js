@@ -143,7 +143,7 @@ class MyCollection extends Component {
 			filter.hidden = 'only';
 		}
 
-		if (tagTerm) {
+		if (tags) {
 			filter.tag = tags;
 		}
 
@@ -313,7 +313,7 @@ class MyCollection extends Component {
 		this.renderCoins();
 	}
 	renderFilter() {
-		const { tagTerm, categoryTerm, showSearchBar, showSortToggle } = this.props;
+		const { tags, categoryTerm, showSearchBar, showSortToggle } = this.props;
 
 		const {
 			isSearching,
@@ -327,11 +327,11 @@ class MyCollection extends Component {
 
 		return (
 			<div className="form-row justify-content-end">
-				{!!showSearchBar &&!tagTerm ? (
+				{!!showSearchBar &&!tags ? (
 					<i className={"fas fa-search" + (showSearch ? ' selected' : '')}></i>
 				) : null}
 			{!!showSearchBar ? (
-				(!tagTerm && !!showSearch) && (
+				(!tags && !!showSearch) && (
 				<div className={"form-group "
 			+ (!!showSearch ? 'col' : (isMobile ? 'col-auto text-center' : 'col-2 text-right'))}>
 				{!!showSearch &&
@@ -367,7 +367,7 @@ class MyCollection extends Component {
 		)
 	}
 	render() {
-		const {tagTerm, showCollectionStats} = this.props;
+		const {tags, showCollectionStats} = this.props;
 		const {
 			isLoading,
 			firstRendered,
@@ -408,10 +408,10 @@ class MyCollection extends Component {
 					</div>
 				}
 			>
-				{tagTerm ? (
+				{tags ? (
 					<div style={{ padding: '10px 10px 0' }}>
 						<p>
-							<strong>Share this Search:</strong> {'https://app.coin.kred/collection/tag/' + encodeURIComponent(tagTerm)}</p>
+							<strong>Share this Search:</strong> {'https://app.coin.kred/collection/tag/' + encodeURIComponent(tags)}</p>
 					</div>
 				) : null}
 				{!isSearching && search && search.length && (

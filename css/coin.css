@@ -220,7 +220,7 @@ div.coin-wrapper.kitty-coin .coin-image>image {
     position: absolute;
     text-transform: uppercase;
     top: 0;
-    right: 15%;
+    right: 5%;
     z-index: 2;
     font-size: 12px;
     font-weight: normal;

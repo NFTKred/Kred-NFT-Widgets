@@ -74,14 +74,13 @@ export class ExplorePage extends Component {
 
 	changeSort(event) {
 		event.preventDefault();
-
 		this.setState({
-			sort: event.target.value
+			sort: $(event.target).val()
 		});
 	}
 
 	onSearch(searchTerm) {
-		history.push('/marketplace/all');
+		// history.push('/marketplace/all');
 		this.setState({
 			search: searchTerm,
 			sort: '-created',
@@ -124,7 +123,7 @@ export class ExplorePage extends Component {
 						search={search}
 						tagTerm={tag}
 						onSearch={debounce(term => this.onSearch(term), 500)}
-						changeSort={this.changeSort.bind(this)}
+						changeSort={e => this.changeSort(e)}
 						onSelectTag={tag => this.onSelectTag(tag)}
 					/>
 				</div>
