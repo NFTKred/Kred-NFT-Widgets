@@ -1,6 +1,10 @@
 
 # Coin.Kred-Widgets
-A Javascript widget to handle rendering of Coin.Kred Widgets
+A Javascript widget to handle rendering of Coin.Kred Widgets. Try the [Coin.Kred Widget builder](https://peoplebrowsr.github.io/Coin.Kred-Widgets/).
+
+Example Preview:
+![alt text](https://raw.githubusercontent.com/PeopleBrowsr/Coin.Kred-Widgets/master/assets/preview-snippet.jpg)
+
 ## Installation
 Include bundle.js file in your HTML document:
 ```html

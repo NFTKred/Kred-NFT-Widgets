@@ -1,18 +1,183 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Coin.Kred Widget Example</title>
-</head>
-<body>
-<div id="app_coinkred"></div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<style>
+		.container {
+			margin-top: 1em;
+		}
+		.panel {
+		  background: #f1f1f1;
+		  padding: 20px;
+		  border-radius: 10px;
+		  margin-bottom: 1em;
+		}
+		.form-group.col-md-6 {
+			padding-left: 0;
+		}
+		button.btn {
+			margin-top: 10px;
+		}
 
-<script type="text/javascript" src="/dist/bundle.js"></script>
-<script>
-	CoinKredWidget({
-		widget: 'explore',
-		tags: 'animals'
-	});
-</script>
+	</style>
+</head>
+
+<body class="container">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="dist/bundle.js"></script>
+
+	<div class="panel">
+
+		<h2>Coin.Kred Widget Builder</h2>
+		<form class="app_coinkred-builder-form">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="widget">Widget</label>
+					<select class="form-control app_coinkred-builder-widget" name="widget">
+						<option value="explore" selected>Explore</option>
+						<option value="marketplace">Marketplace</option>
+						<option value="collection">Collection</option>
+						<option value="newsfeed">Newsfeed</option>
+						<option value="leaderboard">Leaderboard</option>
+					</select>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="domain">Domain</label>
+					<input type="text" class="form-control" name="domain" placeholder="Cameron.Kred">
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="sort">Sort</label>
+					<select class="form-control" name="sort">
+						<option value="-likes" selected>Most Liked</option>
+						<option value="+likes">Least Liked</option>
+						<option value="-created">Most Recent</option>
+						<option value="+created">Least Recent</option>
+						<option value="-circulation">Most Circulated</option>
+						<option value="+circulation">Least Circulated</option>
+					</select>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="tags">Tags</label>
+					<input type="text" class="form-control" name="tags" placeholder="empire.kred,rewards">
+					<small class="form-text text-muted">
+						Render Coins that contain these tags. Comma seperated list.
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" name="showCollectionStats" id="showCollectionStats" disabled>
+					<label class="form-check-label" for="showCollectionStats">
+						Show collection stats
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" name="showSearchBar" id="showSearchBar" checked>
+					<label class="form-check-label" for="showSearchBar">
+						Show search bar
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="" name="showSortToggle" id="showSortToggle" checked>
+					<label class="form-check-label" for="showSortToggle">
+						Show sorting
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary btn-sm">Update</button>
+		</form>
+	</div>
+
+	<h4>Code Snippet:</h4>
+	<code class="code-snippet">
+		CoinKredWidget({ widget: 'explore', sort: '-likes', showSearchBar: true, showSortToggle: true });
+	</code>
+	<br /><br />
+	<h4>Preview:</h4>
+	<div id="app_coinkred"></div>
+
+	<script>
+		CoinKredWidget({ widget: 'explore', sort: '-likes', showSearchBar: true, showSortToggle: true });
+
+		$(function() {
+			$('.app_coinkred-builder-widget').change(function(event) {
+				var $form = $('.app_coinkred-builder-form'),
+					option = $(event.target).val();
+
+				//if newsfeed - disable sort, tags, and all checkboxes
+				//if leaderboard - disable sort and all checkboxes
+				//if explore/marketplace - disable 'collection stats'
+
+				//enable all
+				$form.find('input, select').removeAttr('disabled');
+				if (option === 'newsfeed') {
+					$form.find('[name="sort"]').attr('disabled', true);
+					$form.find('[name="tags"]').attr('disabled', true);
+					$form.find('[type="checkbox"]').attr('disabled', true);
+				} else if (option === 'leaderboard') {
+					$form.find('[name="sort"]').attr('disabled', true);
+					$form.find('[type="checkbox"]').attr('disabled', true);
+				} else if (option === 'explore' || option === 'marketplace') {
+					$form.find('[name="showCollectionStats"]').attr('disabled', true);
+				}
+
+			});
+			$('.app_coinkred-builder-form').submit(function(event) {
+				event.preventDefault();
+				var $form = $(event.target),
+					widget = $form.find('[name="widget"]').val(),
+					domain = $form.find('[name="domain"]').val(),
+					sort = $form.find('[name="sort"]:not([disabled])').val(),
+					tags = $form.find('[name="tags"]:not([disabled])').val(),
+					showCollectionStats = !!$form.find('[name="showCollectionStats"]:not([disabled])').is(':checked'),
+					showSearchBar = !!$form.find('[name="showSearchBar"]:not([disabled])').is(':checked'),
+					showSortToggle = !!$form.find('[name="showSortToggle"]:not([disabled])').is(':checked'),
+					snippet = "CoinKredWidget({ ";
+
+				CoinKredWidget({
+					widget: widget,
+					domain: domain,
+					sort: sort,
+					tags: tags,
+					showCollectionStats: showCollectionStats,
+					showSearchBar: showSearchBar,
+					showSortToggle: showSortToggle
+				});
+
+				snippet += "widget: '" + widget + "'";
+				snippet += !!domain || !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
+
+				snippet += "domain: '" + domain + "'";
+				snippet += !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
+
+				snippet += sort ? "sort: '" + sort + "'" : "";
+				snippet += !!sort || !!tags || showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
+
+				snippet += tags ? "tags: '" + tags + "'" : '';
+				snippet += tags && (showCollectionStats || showSearchBar || showSortToggle) ? ', ' : '';
+
+				snippet += showCollectionStats ? "showCollectionStats: " + showCollectionStats : '';
+				snippet += showCollectionStats && (showSearchBar || showSortToggle) ? ', ' : '';
+
+				snippet += showSearchBar ? "showSearchBar: " + showSearchBar : '';
+				snippet += showSearchBar && showSortToggle ? ', ' : '';
+
+				snippet += showSortToggle ? "showSortToggle: " + showSortToggle : '';
+
+				snippet += ' });'
+
+				$('code').html(snippet);
+			});
+		});
+	</script>
 </body>
+
 </html>
