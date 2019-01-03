@@ -157,7 +157,7 @@
 				snippet += !!domain || !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
 
 				snippet += domain ? "domain: '" + domain + "'" : '';
-				snippet += !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
+				snippet += !!domain && (!!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle) ? ', ' : '';
 
 				snippet += sort ? "sort: '" + sort + "'" : "";
 				snippet += !!sort || !!tags || showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
