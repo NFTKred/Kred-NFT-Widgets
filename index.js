@@ -50,6 +50,9 @@ console.log('ck - index.js start', performance.now());
 				loggedInUser: user
 			}, options);
 
+			//Empty target
+			appRoot.innerHTML = '';
+
 			if (!user) {
 				require('./containers/Signup');
 			}

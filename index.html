@@ -156,7 +156,7 @@
 				snippet += "widget: '" + widget + "'";
 				snippet += !!domain || !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
 
-				snippet += "domain: '" + domain + "'";
+				snippet += domain ? "domain: '" + domain + "'" : '';
 				snippet += !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
 
 				snippet += sort ? "sort: '" + sort + "'" : "";
