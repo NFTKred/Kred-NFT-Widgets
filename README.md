@@ -15,7 +15,7 @@ Add the following to your code:
 ```html
 <div id="app_coinkred"></div>
 
-<script type="text/javascript" src="/dist/bundle.js"></script>
+<script type="text/javascript" src="dist/bundle.js"></script>
 <script>
 	CoinKredWidget();
 </script>
