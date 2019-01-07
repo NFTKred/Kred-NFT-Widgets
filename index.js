@@ -46,7 +46,7 @@ console.log('ck - index.js start', performance.now());
 
 		checkLoggedInUser(function (error, user) {
 			const appRoot = document.getElementById(options.target);
-			const props = _.extend({
+			var props = _.extend({
 				loggedInUser: user
 			}, options);
 
