@@ -33,6 +33,7 @@ Use the following options to customize your widget:
 | showCollectionStats | `true` | Show collection stats |
 | showSearchBar | `true`     | Show search bar |
 | showSortToggle | `true`    | Show sorting |
+| viewOnly | `false`    | Enable Sign-in and actions. Allow users to buy, sell, give and request coins. Like and comment on posts. |
 
 ## Examples
 To show the Coins collection for a domain:

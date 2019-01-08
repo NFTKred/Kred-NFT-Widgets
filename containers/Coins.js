@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
 
-import { isUserLoggedIn, getUser } from '../js/auth';
+import { isUserLoggedIn, getUser, requireLogin } from '../js/auth';
 
 import Coin, { CoinPlaceholder } from './Coin';
 
@@ -15,6 +15,8 @@ import {getWallets, cancelAuctionOrSale, cancelBatchAuctionOrSale, likeCoin, unl
 	deleteDraftCoin} from '../js/grab';
 import { sendGrid } from '../js/sos';
 import { history } from '../js/history';
+import { openGiveACoinModal } from './GiveACoin';
+import { openAsyncModal } from '../js/modal';
 
 import '../css/coin';
 import 'animate.css';
@@ -41,24 +43,64 @@ class Coins extends Component {
 			});
 		}
 	}
+	giveACoin(coin) {
+		if (requireLogin()) {
+			return;
+		}
+
+		openGiveACoinModal({
+			coin: coin
+		});
+	}
+	async buyCoin(coin) {
+		if (requireLogin()) {
+			return;
+		}
+
+		const {
+			domainMarketplaceShop,
+			marketplaceOwner
+		} = this.props;
+
+		openAsyncModal(
+			import(/* webpackChunkName: "BuyCoin" */ './BuyCoin'),
+			{
+				//Buyer must pay 1% premium fee if the coin is not owned buy the marketplace owner
+				payPremiumFee: domainMarketplaceShop && marketplaceOwner.id !== getUser().id && coin.user !== marketplaceOwner.id,
+				coin,
+				domainMarketplaceShop,
+			}
+		);
+	}
+	auctionCoin(coin) {
+		if (requireLogin()) {
+			return;
+		}
+
+		openAsyncModal(
+			import(/* webpackChunkName: "AuctionCoin" */ './AuctionCoin'),
+			{ coin }
+		);
+	}
+	sellCoin(coin) {
+		if (requireLogin()) {
+			return;
+		}
+
+		openAsyncModal(
+			import(/* webpackChunkName: "SellCoin" */ './SellCoin'),
+			{ coin }
+		);
+	}
 	viewProfile(coin) {
-		var url;
+		var url = "/coin/" + coin.symbol + "/" + coin.sequence;
 		if (coin.draft || coin.kitty) {
 			return;
 		}
-		if (this.props && this.props.batched && coin.coins > 1) {
-			if (location.pathname.match(/\/tag/)) {
-				url = location.pathname + "/batch/" + coin.batch;
-			} else if (location.pathname.match(/marketplace$/)) {
-				url = "/marketplace/batch/" + coin.batch;
-			} else if (location.pathname.match(/collection/)) {
-				url = "/collection/batch/" + coin.batch + "/" + coin.user;
-			} else {
-				url = "/marketplace/all/batch/" + coin.batch;
-			}
-			return this.route(url);
+		if (coin.coins > 1) {
+			url = "/coin/" + coin.symbol + "/all";
 		}
-		return this.route("/coin/" + coin.symbol + "/" + coin.sequence);
+		return window.open('https://' + (CoinKredWidget.options.domain || 'app.coin.kred') + url, '_blank');
 	}
 	route(url) {
 		history.push(url);
@@ -69,24 +111,12 @@ class Coins extends Component {
 			return;
 		}
 
-		// if (this.props.batched && coin.coins > 1) {
-		// 	if (location.pathname.match(/\/tag/)) {
-		// 		url = location.pathname + "/batch/" + coin.batch;
-		// 	} else if (location.pathname.match(/marketplace$/)) {
-		// 		url = "/marketplace/batch/" + coin.batch;
-		// 	} else if (location.pathname.match(/collection/)) {
-		// 		url = "/collection/batch/" + coin.batch + "/" + coin.user;
-		// 	} else {
-		// 		url = "/marketplace/all/batch/" + coin.batch;
-		// 	}
-		// 	return this.route(url);
-		// }
 		const modal = document.createElement('div');
 		modal.className = 'coin-action-modals';
 		document.body.appendChild(modal);
 
 		if (checkIfMobile()) {
-			return this.route(url);
+			return window.open('https://' + (CoinKredWidget.options.domain || 'app.coin.kred') + url, '_blank');
 		}
 
 		ReactDOM.render(<CoinProfileModal viewOnly={this.props.viewOnly} loggedInUser={getUser()} route={this.route} coin={coin} viewProfile={this.viewProfile}/>, modal);
@@ -445,6 +475,60 @@ class Coins extends Component {
 										</span>
 									</div>
 								)}
+
+								{!viewOnly && (<div className="coin-actions">
+									{amOwner && coin.batch && !obj.auction && !obj.sale && !coin.held && (
+										<div className="btn-group dropdown">
+											<button type="button" className="btn btn-primary-secondary btn-sm coin-item-give" onClick={() => {
+												this.giveACoin(coin)
+											}}>Give</button>
+											<button type="button" className="btn btn-primary-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span className="sr-only">Toggle Dropdown</span>
+											</button>
+											<div className="dropdown-menu dropdown-menu-right">
+												<a className="dropdown-item" onClick={() => {
+													this.sellCoin(coin)
+												}}>Sell</a>
+												<a className="dropdown-item" onClick={() => {
+													this.auctionCoin(coin)
+												}}>Auction</a>
+											</div>
+										</div>
+									)}
+									{amOwner && coin.batch && !obj.auction && !obj.sale && !!coin.held && (
+										<button className="btn btn-outline-secondary btn-sm disabled" onClick={() => {
+											this.pendingCoin(coin)
+										}}>Pending</button>
+									)}
+									{amOwner && coin.batch && (obj.auction || obj.sale) && (
+										<button className="btn btn-outline-secondary btn-sm coin-item-bid"
+											onClick={() => {this.cancelMarketplace(obj)}}>
+											Cancel {obj.sale ? 'Sale' : obj.auction ? 'Auction' : '' }</button>
+									)}
+									{!amOwner && obj.auction && (
+										<button className="btn btn-primary-secondary btn-sm coin-item-bid" onClick={() => {
+											this.buyCoin(coin)
+										}}>
+											<i className="fas fa-tag"></i>&nbsp;
+											Buy {batched && coin.coins > 1 && (obj.min_price !== obj.max_price) ? ('from ' + round(obj.min_price, 2) + ' to ' + round(obj.max_price, 2)) : (round((price || coin.value), 2))}
+											<span>CƘr</span>
+										</button>
+									)}
+									{!amOwner && obj.sale && (
+										<button className="btn btn-primary-secondary btn-sm" onClick={() => {
+											this.buyCoin(coin)
+										}}>
+											<i className="fas fa-tag"></i>&nbsp;
+											Buy {batched && coin.coins > 1 && (obj.min_price !== obj.max_price) ? ('from ' + round(obj.min_price, 2) + ' to ' + round(obj.max_price, 2)) : (round((price || coin.value), 2))}
+											<span>CƘr</span>
+										</button>
+									)}
+									{!amOwner && !obj.auction && !obj.sale && !coin.kitty && (
+										<button className={"btn btn-primary-secondary btn-sm" + (requestStatus === 'Requested' ? " disabled" : '')} onClick={(event) => {
+											this.requestCoin(event, coin)
+										}}>{requestStatus}</button>
+									)}
+								</div>)}
 
 								{!batched && obj.action && obj.from && (
 									<p className="badge badge-pill badge-secondary">

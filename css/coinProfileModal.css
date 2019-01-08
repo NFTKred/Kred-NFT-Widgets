@@ -1,265 +1,266 @@
 .coinprofile-modal h3 {
-	font-size: 18px;
+    font-size: 18px;
 }
 .coinprofile-modal.modal .modal-content .modal-body p {
-	font-size: inherit;
-	margin-top: 0;
+    font-size: inherit;
+    margin-top: 0;
 }
 @media (min-width: 576px) {
-	.coinprofile-modal .modal-dialog {
-		/*max-width: 600px;*/
-		margin: 1.75rem auto;
-	}
+    .coinprofile-modal .modal-dialog {
+        /*max-width: 600px;*/
+        margin: 1.75rem auto;
+    }
 }
 .coinprofile-modal .modal-header {
-	padding: 4px;
+    padding: 4px;
 }
 .coinprofile-modal .modal-header .modal-title {
-	margin: 10px;
+    margin: 10px;
 }
 .coinprofile-modal .commentpostbox-modal .modal-header .modal-title {
-	margin: 10px 15px;
+    margin: 10px 15px;
 }
 .coinprofile-modal .modal-header .close {
-	margin: 5px 0;
+    margin: 5px 0;
 }
 .coinprofile-modal .modal-header h5 .coinfrontback-container {
-	display: inline-block;
-	vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 .coinprofile-modal .modal-body {
-	padding: 0;
+    padding: 0;
 }
 .coinprofile-modal .modal-body .modal-body {
-	padding: 1rem;
+    padding: 1rem;
 }
 .coinprofile-modal .modal-body .row.no-gutters {
-	padding: 5px;
+    padding: 5px;
 }
 .coinprofile-modal .modal-body .row.no-gutters.body-container {
-	padding: 0;
+    padding: 0;
 }
 .coinprofile-modal .coinprofile-widget-header {
-	font-size: 16px;
-	margin-top: 10px;
-	text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
 }
 @media (min-width: 768px) {
-	.coinprofile-modal .coinprofile-widget-header {
-		text-align: right;
-	}
+    .coinprofile-modal .coinprofile-widget-header {
+        text-align: right;
+    }
 }
 .coinprofile-modal .coinprofile-comments-container .coinprofile-widget-header {
-	border-bottom: 1px solid #f1f1f1;
-	padding: 10px 0;
-	margin: 0;
-	text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px 0;
+    margin: 0;
 }
 .coinprofile-modal .coinprofile-widget-header button {
-	margin-left: 13px;
+    margin-left: 13px;
+    margin-top: 0;
 }
 .coinprofile-modal .coinprofile-widget-header .coin-actions span {
-	vertical-align: text-bottom;
-	margin-left: 25px;
-	cursor: pointer;
+    vertical-align: text-bottom;
+    margin-left: 25px;
+    cursor: pointer;
 }
 .coinprofile-modal .coinprofile-widget-header i.fa-heart,
 .coinprofile-modal .coinprofile-widget-header .circulation-popup,
 .coinprofile-modal .coinprofile-widget-header .request-popup {
-	cursor: pointer;
+    cursor: pointer;
 }
 .coinprofile-modal .coinprofile-widget-header i {
-	color: #cacaca;
+    color: #cacaca;
 }
 @media (max-width: 768px) {
-	.coinprofile-modal .coinprofile-widget-header i {
-		font-size: 20px;
-		margin: 0 10px;
-	}
+    .coinprofile-modal .coinprofile-widget-header i {
+        font-size: 20px;
+        margin: 0 10px;
+    }
 }
 .coinprofile-modal .coinprofile-widget-header i.fa-heart.liked {
-	color: #e0245e;
+    color: #e0245e;
 }
 .coinprofile-modal .coinprofile-widget-header .fa-pencil-square-o {
-	font-size: 20px;
+    font-size: 20px;
 }
 .coinprofile-modal .coinprofile-widget-header .request-popup .fa-hand-holding {
-	vertical-align: top;
-	margin-top: 1px;
+    vertical-align: top;
+    margin-top: 1px;
 }
 .coinprofile-modal .no-gutters>.col, .no-gutters>[class*=col-].coinprofile-comments-container {
-	padding: 0 10px;
+    padding: 0 10px;
 }
 .coinprofile-modal .coinprofile-widget-header .divider {
-	margin: 0 13px;
-	border-left: 1px solid #cacaca;
+    margin: 0 13px;
+    border-left: 1px solid #cacaca;
 }
 .coinprofile-modal .modal-body .editcoinmeta-container .col-12,
 .coinprofile-modal .modal-body .giveaway-container .col-12 {
-	padding: 0;
+    padding: 0;
 }
 .coinprofile-modal .coinprofile-comments-header span {
-	margin-left: 5px;
-	cursor: pointer;
+    margin-left: 5px;
+    cursor: pointer;
 }
 .coinprofile-modal .coinprofile-comments {
-	height: 360px;
-	overflow-y: auto;
-	overflow-x: hidden;
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .coinprofile-modal .coinprofile-comments .round-avatar {
-	width: 30px;
-	height: 30px;
+    width: 30px;
+    height: 30px;
 }
 .coinprofile-modal .coinprofile-comments-item {
-	border: 0;
-	padding: 10px 0 15px;
+    border: 0;
+    padding: 10px 0 15px;
 }
 .coinprofile-modal .coinprofile-comments-item-container {
-	margin: 1em 2em 0;
+    margin: 1em 2em 0;
 }
 .coinprofile-modal .coinprofile-comments .coinprofile-comments-item .coinprofile-comments-overflow form {
-	margin: 10px;
+    margin: 10px;
 }
-.coinprofile-modal .coinprofile-comments-item-container > .coinprofile-comments-item:nth-child(2n - 1) {
-	background: #f1f1f1;
+.coinprofile-modal .coinprofile-comments-item-container>.coinprofile-comments-item:nth-child(2n - 1) {
+    background: #f1f1f1;
 }
-.coinprofile-modal .coinprofile-comments-item-container > .coinprofile-comments-item {
-	padding: 10px 5px;
+.coinprofile-modal .coinprofile-comments-item-container>.coinprofile-comments-item {
+    padding: 10px 5px;
 }
 .coinprofile-modal img.round-avatar {
-	border-radius: 100%;
-	height: 40px;
-	width: 40px;
-	margin-bottom: 5px;
-	margin-right: 10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-time {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-author {
-	display: inline-block;
+    display: inline-block;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-connect-buttons {
-	padding-left: 0;
+    padding-left: 0;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-connect-buttons button {
-	font-size: 12px;
-	margin-top: 7px;
+    font-size: 12px;
+    margin-top: 7px;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-title {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-body {
-	padding-top: 10px;
-	margin-bottom: 0;
+    padding-top: 10px;
+    margin-bottom: 0;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-media {
-	max-width: 100%;
-	margin: 10px 0;
+    max-width: 100%;
+    margin: 10px 0;
 }
 .coinprofile-modal .coinprofile-comments-item .embed-og img {
-	width: 100%;
+    width: 100%;
 }
 .coinprofile-modal .coinprofile-comments-item .player-wrapper {
-	position: relative;
-	padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+    position: relative;
+    padding-top: 56.25%
+        /* Player ratio: 100 / (1280 / 720) */
 }
 .coinprofile-modal .coinprofile-comments-item .react-player {
-	position: absolute;
-	top: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-connect-buttons,
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-time,
 .coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions {
-	/*display: none;*/
+    /*display: none;*/
 }
-.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions > span {
-	margin-right: 10px;
-	font-size: 14px;
+.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions>span {
+    margin-right: 10px;
+    font-size: 14px;
 }
-.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions > span > i {
-	font-size: 16px;
-	cursor: pointer;
+.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions>span>i {
+    font-size: 16px;
+    cursor: pointer;
 }
-.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions > span > i.fa-ellipsis-h {
-	vertical-align: middle;
+.coinprofile-modal .coinprofile-comments-item .coinprofile-comments-actions>span>i.fa-ellipsis-h {
+    vertical-align: middle;
 }
 .coinprofile-modal .coinprofile-value-stats {
-	float: right;
-	text-align: right;
-	margin-top: -2px;
+    float: right;
+    text-align: right;
+    margin-top: -2px;
 }
 .coinprofile-modal .coinprofile-value-stats div {
-	font-size: 10px;
+    font-size: 10px;
 }
 .coinprofile-modal .coinprofile-value-stats .coinprofile-value-change {
-	color: green;
+    color: green;
 }
 .coinprofile-modal .coinprofile-circulation-item {
-	padding: 7px 0 3px;
+    padding: 7px 0 3px;
 }
 .coinprofile-modal .coinprofile-circulation-item .coinprofile-circulation-count {
-	display: inline-block;
-	width: 25px;
+    display: inline-block;
+    width: 25px;
 }
 .coinprofile-modal .coinprofile-circulation-item .coinprofile-circulation-author {
-	display: inline-block;
-	width: calc(100% - 80px);
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	margin-bottom: 0;
-	padding-bottom: 2px;
-	vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 80px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+    vertical-align: middle;
 }
 .coinprofile-modal .coinprofile-owner-buttons button {
-	min-width: 90px;
-	margin: 0 3px;
+    min-width: 90px;
+    margin: 0 3px;
 }
 .coinprofile-modal .coinprofile-circulation-item .coinprofile-circulation-button {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 .coinprofile-modal .carousel-control-next,
 .coinprofile-modal .carousel-control-prev {
-	color: #666666;
-	opacity: 0.6;
-	font-size: 25px;
+    color: #666666;
+    opacity: 0.6;
+    font-size: 25px;
 }
 .coinprofile-modal .coinprofile-issuedby:nth-child(2) {
-	margin-left: 10px;
-	padding-left: 10px;
-	border-left: 1px solid #f1f1f1;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #f1f1f1;
 }
 .coinprofile-modal .coinprofile-issuedby {
-	display: inline-block;
+    display: inline-block;
 }
 @media (min-width: 768px) {
-	.coinprofile-modal .coinprofile-issuedby {
-		text-align: left;
-	}
+    .coinprofile-modal .coinprofile-issuedby {
+        text-align: left;
+    }
 }
 .coinprofile-modal .coinprofile-issuedby a {
-	color: inherit;
+    color: inherit;
 }
 .coinprofile-modal .coinprofile-issuedby .issuer-avatar {
-	border-radius: 100%;
-	width: 45px;
-	height: 45px;
-	margin-right: 5px;
-	display: inline-block;
-	background-position: center;
-	background-size: cover;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
 }
 .coinprofile-modal .coinprofile-issuedby .issuedby-details {
-	display: inline-block;
-	text-align: left;
-	vertical-align: text-bottom;
+    display: inline-block;
+    text-align: left;
+    vertical-align: text-bottom;
 }
 .coinprofile-modal .modal-content .modal-body .coinprofile-issuedby p {
-	font-size: 11px;
-	letter-spacing: 1px;
-	margin-bottom: 0;
-	margin-top: 3px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    margin-top: 3px;
 }

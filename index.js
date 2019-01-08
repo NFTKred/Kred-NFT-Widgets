@@ -16,7 +16,7 @@ import './css/index';
 
 window.grabApiUrl = 'https://api.grab.live';
 window.cryptoURL = 'https://app.coin.kred';
-
+window.branding = {};
 console.log('ck - index.js start', performance.now());
 (function (window, factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -41,7 +41,7 @@ console.log('ck - index.js start', performance.now());
 			showCollectionStats: true, //Show collection stats
 			showSearchBar: true, //Show search bar
 			showSortToggle: true, //Show sort,
-			viewOnly: true // All actions are turned off
+			viewOnly: false // Enable Sign-in and actions. Allow users to buy, sell, give and request coins. Like and comment on posts
 		}, options);
 
 		checkLoggedInUser(function (error, user) {
