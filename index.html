@@ -1,184 +1,145 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-	<title>Coin.Kred Widget Example</title>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
-	<style>
-		.container {
-			margin-top: 1em;
-		}
-		.panel {
-		  background: #f1f1f1;
-		  padding: 20px;
-		  border-radius: 10px;
-		  margin-bottom: 1em;
-		}
-		.form-group.col-md-6 {
-			padding-left: 0;
-		}
-		button.btn {
-			margin-top: 10px;
-		}
+    <title>Kred NFT Widget Example</title>
+    <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">-->
+    <link href="https://static.socialos.net/inspinia/html/font-awesome-pro/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
 
-	</style>
+    <style>
+        .container {
+            margin-top: 1em;
+        }
+
+        .panel {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .form-group.col-md-6 {
+            padding-left: 0;
+        }
+
+        button.btn {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body class="container">
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script type="text/javascript" src="dist/bundle.js"></script>
+<div class="navbar-wrapper">
+    <nav id="universal-navbar" class="navbar navbar-fixed-top" role="navigation"
+         data-login=""
+         data-home="/engagement/profile"
+         data-title=""
+         data-profile=""
+    ></nav>
 
-	<div class="panel">
+    <!-- Main content section - we will load tabs here on demand -->
+    <main id="main" class="md-skin wrapper wrapper-content"></main>
+</div>
 
-		<h2>Coin.Kred Widget Builder</h2>
-		<form class="app_coinkred-builder-form">
-			<div class="row">
-				<div class="form-group col-md-6">
-					<label for="widget">Widget</label>
-					<select class="form-control app_coinkred-builder-widget" name="widget">
-						<option value="explore" selected>Explore</option>
-						<option value="marketplace">Marketplace</option>
-						<option value="collection">Collection</option>
-						<option value="newsfeed">Newsfeed</option>
-						<option value="leaderboard">Leaderboard</option>
-					</select>
-				</div>
+<div class="panel">
 
-				<div class="form-group col-md-6">
-					<label for="domain">Domain</label>
-					<input type="text" class="form-control" name="domain" placeholder="Cameron.Kred">
-				</div>
+    <h2>Kred NFT Widget Builder</h2>
+    <form class="app_KredNFT-builder-form">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="widget">Widget*</label>
+                <select class="form-control app_KredNFT-builder-widget" name="widget" required>
+                    <option value="explore" selected>Explore</option>
+                    <option value="marketplace">Marketplace</option>
+                    <option value="mywallet">My Wallet</option>
+                    <option value="newsfeed">Newsfeed</option>
+                    <option value="leaderboard">Leaderboard</option>
+                    <option value="minter">Minter</option>
+                </select>
+            </div>
 
-				<div class="form-group col-md-6">
-					<label for="sort">Sort</label>
-					<select class="form-control" name="sort">
-						<option value="-likes" selected>Most Liked</option>
-						<option value="+likes">Least Liked</option>
-						<option value="-created">Most Recent</option>
-						<option value="+created">Least Recent</option>
-						<option value="-circulation">Most Circulated</option>
-						<option value="+circulation">Least Circulated</option>
-					</select>
-				</div>
+            <div class="form-group col-md-6">
+                <label for="domain">Domain</label>
+                <input type="text" class="form-control" name="domain" placeholder="Cameron.Kred">
+            </div>
 
-				<div class="form-group col-md-6">
-					<label for="tags">Tags</label>
-					<input type="text" class="form-control" name="tags" placeholder="empire.kred,rewards">
-					<small class="form-text text-muted">
-						Render Coins that contain these tags. Comma seperated list.
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" name="showCollectionStats" id="showCollectionStats" disabled>
-					<label class="form-check-label" for="showCollectionStats">
-						Show collection stats
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" name="showSearchBar" id="showSearchBar" checked>
-					<label class="form-check-label" for="showSearchBar">
-						Show search bar
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" name="showSortToggle" id="showSortToggle" checked>
-					<label class="form-check-label" for="showSortToggle">
-						Show sorting
-					</label>
-				</div>
-			</div>
-			<button type="submit" class="btn btn-primary btn-sm">Update</button>
-		</form>
-	</div>
+            <div class="form-group col-md-6">
+                <label for="sort">Sort</label>
+                <select class="form-control" name="sort" id="sort">
+                    <option value="-likes" selected>Most Liked</option>
+                    <option value="+likes">Least Liked</option>
+                    <option value="-created">Most Recent</option>
+                    <option value="+created">Least Recent</option>
+                    <option value="-circulation">Most Circulated</option>
+                    <option value="+circulation">Least Circulated</option>
+                </select>
+            </div>
 
-	<h4>Code Snippet:</h4>
-	<code class="code-snippet">
-		CoinKredWidget({ widget: 'explore', sort: '-likes', showSearchBar: true, showSortToggle: true });
-	</code>
-	<br /><br />
-	<h4>Preview:</h4>
-	<div id="app_coinkred"></div>
+            <div class="form-group col-md-6">
+                <label for="tags">Tags</label>
+                <input type="text" class="form-control" name="tags" placeholder="eg. empire.kred,rewards" id="tags">
+                <small class="form-text text-muted">
+                    Render NFTs that contain these tags. Comma seperated list.
+                </small>
+            </div>
+        </div>
+        <!--        <div class="row">-->
+        <!--            <div class="form-check">-->
+        <!--                <input class="form-check-input" type="checkbox" value="" name="showMyWalletBundles"-->
+        <!--                       id="showMyWalletBundles" disabled>-->
+        <!--                <label class="form-check-label" for="showMyWalletBundles">-->
+        <!--                    Show My Wallet Bundles-->
+        <!--                </label>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="row">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" name="showSearchBar" id="showSearchBar">
+                <label class="form-check-label" for="showSearchBar">
+                    Show search bar
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" name="showSortToggle" id="showSortToggle">
+                <label class="form-check-label" for="showSortToggle">
+                    Show sorting
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Update</button>
+    </form>
+</div>
 
-	<script>
-		CoinKredWidget({ widget: 'explore', sort: '-likes', showSearchBar: true, showSortToggle: true });
+<h4>Code Snippet:</h4>
+<code class="code-snippet">
+    KredNFTWidget({ widget: 'explore', sort: '-likes' });
+</code>
+<br/><br/>
+<h4>Preview:</h4>
+<div id="app"></div>
 
-		$(function() {
-			$('.app_coinkred-builder-widget').change(function(event) {
-				var $form = $('.app_coinkred-builder-form'),
-					option = $(event.target).val();
+<noscript>Your browser does not support JavaScript!</noscript>
+<script type="text/javascript">
+    window.app = 'cryptokred';
+    window.domain = 'app.nft.kred';
+    window.branding = {
+        ck_global_marketplace: "",
+        ck_filter: ""
+    };
+    window.connect_sid = 'None';
+    window.embeddable = location.pathname.substr(0, 7) === '/embed/';
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.6.1/async.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 
-				//if newsfeed - disable sort, tags, and all checkboxes
-				//if leaderboard - disable sort and all checkboxes
-				//if explore/marketplace - disable 'collection stats'
+<script type="text/javascript" src="https://static.socialos.net/inspinia/html/crypto/embed.js" async></script>
 
-				//enable all
-				$form.find('input, select').removeAttr('disabled');
-				if (option === 'newsfeed') {
-					$form.find('[name="sort"]').attr('disabled', true);
-					$form.find('[name="tags"]').attr('disabled', true);
-					$form.find('[type="checkbox"]').attr('disabled', true);
-				} else if (option === 'leaderboard') {
-					$form.find('[name="sort"]').attr('disabled', true);
-					$form.find('[type="checkbox"]').attr('disabled', true);
-				} else if (option === 'explore' || option === 'marketplace') {
-					$form.find('[name="showCollectionStats"]').attr('disabled', true);
-				}
-
-			});
-			$('.app_coinkred-builder-form').submit(function(event) {
-				event.preventDefault();
-				var $form = $(event.target),
-					widget = $form.find('[name="widget"]').val(),
-					domain = $form.find('[name="domain"]').val(),
-					sort = $form.find('[name="sort"]:not([disabled])').val(),
-					tags = $form.find('[name="tags"]:not([disabled])').val(),
-					showCollectionStats = !!$form.find('[name="showCollectionStats"]:not([disabled])').is(':checked'),
-					showSearchBar = !!$form.find('[name="showSearchBar"]:not([disabled])').is(':checked'),
-					showSortToggle = !!$form.find('[name="showSortToggle"]:not([disabled])').is(':checked'),
-					snippet = "CoinKredWidget({ ";
-
-				CoinKredWidget({
-					widget: widget,
-					domain: domain,
-					sort: sort,
-					tags: tags,
-					showCollectionStats: showCollectionStats,
-					showSearchBar: showSearchBar,
-					showSortToggle: showSortToggle
-				});
-
-				snippet += "widget: '" + widget + "'";
-				snippet += !!domain || !!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
-
-				snippet += domain ? "domain: '" + domain + "'" : '';
-				snippet += !!domain && (!!sort || !!tags ||showCollectionStats || showSearchBar || showSortToggle) ? ', ' : '';
-
-				snippet += sort ? "sort: '" + sort + "'" : "";
-				snippet += !!sort || !!tags || showCollectionStats || showSearchBar || showSortToggle ? ', ' : '';
-
-				snippet += tags ? "tags: '" + tags + "'" : '';
-				snippet += tags && (showCollectionStats || showSearchBar || showSortToggle) ? ', ' : '';
-
-				snippet += showCollectionStats ? "showCollectionStats: " + showCollectionStats : '';
-				snippet += showCollectionStats && (showSearchBar || showSortToggle) ? ', ' : '';
-
-				snippet += showSearchBar ? "showSearchBar: " + showSearchBar : '';
-				snippet += showSearchBar && showSortToggle ? ', ' : '';
-
-				snippet += showSortToggle ? "showSortToggle: " + showSortToggle : '';
-
-				snippet += ' });'
-
-				$('code').html(snippet);
-			});
-		});
-	</script>
 </body>
 
 </html>

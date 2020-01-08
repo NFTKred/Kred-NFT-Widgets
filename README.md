@@ -1,23 +1,30 @@
 
-# Coin.Kred Widget
-A Javascript widget to handle selection, sorting, and rendering of a page of coins. Try the [Coin.Kred Widget builder](https://peoplebrowsr.github.io/Widgets/).
+# Kred NFT Widgets
+A Javascript widget to handle selection, sorting, and rendering of a page of NFTs. Try the [Kred NFT Widget builder](https://nftkred.github.io/Kred-NFT-Widgets/).
 
 Example:
 ![alt text](https://raw.githubusercontent.com/PeopleBrowsr/Coin.Kred-Widgets/master/assets/preview-snippet.jpg)
 
 ## Installation
-Include bundle.js file in your HTML document:
+Include embed.css and embed.js file in your HTML document:
 ```html
-<link href="dist/bundle.js" rel="stylesheet">
+<link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://static.socialos.net/inspinia/html/crypto/embed.js"></script>
 ```
 ## Basic Usage
-Add the following to your code:
+Add the following into head:
 ```html
-<div id="app_coinkred"></div>
+<link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
+```
 
-<script type="text/javascript" src="dist/bundle.js"></script>
+Add the following into body:
+```html
+<div id="app"></div>
+
+<script type="text/javascript" src="https://static.socialos.net/inspinia/html/crypto/embed.js"></script>
 <script>
-	CoinKredWidget();
+	NFTKredWidget();
 </script>
 ```
 ## Options
@@ -25,27 +32,27 @@ Use the following options to customize your widget:
 
 | Option     | Default Value | Description |
 | ---------- | :------------- | :----------- |
-| target     | `app_coinkred`| ID to render widget |
-| widget     | `explore`     | Widget to render. Valid values are `explore`, `marketplace`, `collection`, `newsfeed` or `leaderboard` |
-| domain     | `null`        | Render Coins from a certain collection domain. Eg. 'jdr.ceo' |
-| sort       | `-likes`      | Sort the Coins. Valid values are `-likes`, `+likes`, `-created`, `+created`, `-circulation`, `+circulation` |
-| tags       | `null`        | Render Coins that contain these tags. Comma seperated list. Eg. 'empire.kred,rewards' |
-| showCollectionStats | `true` | Show collection stats |
-| showSearchBar | `true`     | Show search bar |
-| showSortToggle | `true`    | Show sorting |
+| target     | `app`| ID to render widget |
+| widget     | `explore`     | Widget to render. Valid values are `explore`, `marketplace`, `mywallet`, `newsfeed`, `leaderboard`, or `minter` |
+| domain     | `null`        | Render NFTs from a certain collection domain. Eg. 'jdr.ceo' |
+| sort       | `-likes`      | Sort the NFTs. Valid values are `-likes`, `+likes`, `-created`, `+created`, `-circulation`, `+circulation` |
+| tags       | `null`        | Render NFTs that contain these tags. Comma seperated list. Eg. 'empire.kred,rewards' |
+| showMyWalletBundles | `true` | Show subscribed bundles in your wallet |
+| showSearchBar | `false`     | Show search bar |
+| showSortToggle | `false`    | Show sorting |
 
 ## Examples
-To show the Coins collection for a domain:
+To show the NFTs collection for a domain:
 ```javascript
-CoinKredWidget({
-  widget: 'collection',
+NFTKredWidget({
+  widget: 'mywallet',
   domain: 'jdr.ceo'
 });
 ```
 
-To show all Coins tagged 'animals':
+To show all NFTs tagged 'animals':
 ```javascript
-CoinKredWidget({
+NFTKredWidget({
   widget: 'explore',
   tags: 'animals'
 });
