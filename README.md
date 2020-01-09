@@ -6,23 +6,23 @@ Example:
 ![alt text](https://raw.githubusercontent.com/PeopleBrowsr/Coin.Kred-Widgets/master/assets/preview-snippet.jpg)
 
 ## Installation
-Include embed.css and embed.js file in your HTML document:
+Include krednftwidget.css and krednftwidget.js file in your HTML document:
 ```html
-<link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
+<link href="https://app.nft.kred/krednftwidget.css" rel="stylesheet">
 
-<script type="text/javascript" src="https://static.socialos.net/inspinia/html/crypto/embed.js"></script>
+<script type="text/javascript" src="https://app.nft.kred/krednftwidget.js"></script>
 ```
 ## Basic Usage
-Add the following into head:
+Add the following into <head>:
 ```html
-<link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
+<link href="https://app.nft.kred/krednftwidget.css" rel="stylesheet">
 ```
 
-Add the following into body:
+Add the following into <body>:
 ```html
 <div id="app"></div>
 
-<script type="text/javascript" src="https://static.socialos.net/inspinia/html/crypto/embed.js"></script>
+<script type="text/javascript" src="https://app.nft.kred/krednftwidget.js"></script>
 <script>
 	NFTKredWidget();
 </script>

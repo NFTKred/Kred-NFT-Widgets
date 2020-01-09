@@ -2,17 +2,13 @@
 
 <head>
     <title>Kred NFT Widget Example</title>
-    <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
     <link href="https://static.socialos.net/inspinia/html/font-awesome-pro/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://static.socialos.net/inspinia/html/crypto/embed.css" rel="stylesheet">
 
     <style>
-        .container {
-            margin-top: 1em;
-        }
-
         .panel {
             background: #f1f1f1;
             padding: 20px;
@@ -26,6 +22,15 @@
 
         button.btn {
             margin-top: 10px;
+        }
+        .app_KredNFT-builder-form .form-check  {
+            margin-bottom: 5px;
+        }
+        .app_KredNFT-builder-form .form-check input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+        .app_KredNFT-builder-form .form-check .form-check-label {
+            margin-top: 3px;
         }
     </style>
 </head>
@@ -49,8 +54,8 @@
     <form class="app_KredNFT-builder-form">
         <div class="row">
             <div class="form-group col-md-6">
-                <label for="widget">Widget*</label>
-                <select class="form-control app_KredNFT-builder-widget" name="widget" required>
+                <label for="widget">Widget</label>
+                <select class="form-control app_KredNFT-builder-widget" name="widget" id="widget" required>
                     <option value="explore" selected>Explore</option>
                     <option value="marketplace">Marketplace</option>
                     <option value="mywallet">My Wallet</option>
@@ -62,7 +67,7 @@
 
             <div class="form-group col-md-6">
                 <label for="domain">Domain</label>
-                <input type="text" class="form-control" name="domain" placeholder="Cameron.Kred">
+                <input type="text" class="form-control" name="domain" placeholder="Cameron.Kred" id="domain">
             </div>
 
             <div class="form-group col-md-6">
