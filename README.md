@@ -2,9 +2,6 @@
 # Kred NFT Widgets
 A Javascript widget to handle selection, sorting, and rendering of a page of NFTs. Try the [Kred NFT Widget builder](https://nftkred.github.io/Kred-NFT-Widgets/).
 
-Example:
-![alt text](https://raw.githubusercontent.com/PeopleBrowsr/Coin.Kred-Widgets/master/assets/preview-snippet.jpg)
-
 ## Installation
 Include krednftwidget.css and krednftwidget.js file in your HTML document:
 ```html
