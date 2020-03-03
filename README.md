@@ -21,7 +21,7 @@ Add the following into <body>:
 
 <script type="text/javascript" src="https://cdn.nft.kred/assets/nft/krednftwidget.js"></script>
 <script>
-	NFTKredWidget();
+	KredNFTWidget();
 </script>
 ```
 ## Options
@@ -41,7 +41,7 @@ Use the following options to customize your widget:
 ## Examples
 To show the NFTs collection for a domain:
 ```javascript
-NFTKredWidget({
+KredNFTWidget({
   widget: 'mywallet',
   domain: 'jdr.ceo'
 });
@@ -49,7 +49,7 @@ NFTKredWidget({
 
 To show all NFTs tagged 'animals':
 ```javascript
-NFTKredWidget({
+KredNFTWidget({
   widget: 'explore',
   tags: 'animals'
 });
